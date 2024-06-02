@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body {
+            background-color: rgb(104, 104, 212);
+            color: white;
+            font: normal 20pt Arial;
+        }
+        div {
+            background-color: mediumseagreen;
+            margin: 20px;
+            color: white;
+            width: 320px;
+            height: 180px;
+            line-height: 180px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá mundo!</h1>
+    <div id="mouse_event">
+        Interaja...
+    </div>
+    <script>
+        var ME = document.getElementById('mouse_event')
+        ME.addEventListener('mouseenter', MouseInside)
+        ME.addEventListener('click', ClickEvent)
+        ME.addEventListener('mouseout', OutEvent)
+        function MouseInside(){
+            ME.style.background = 'tomato'
+            ME.innerText = 'Clique!'
+        }
+        function ClickEvent(){
+            ME.style.background = 'green'
+            ME.innerText = 'Clicou!'
+        }
+        function PostClick(){
+            ME.style.background = 'tomato'
+            ME.innerText = 'Clique!'
+        }
+        function OutEvent(){
+            ME.style.background = 'mediumseagreen'
+            ME.innerText = 'Interaja...'
+        }
+    </script>
+</body>
+</html>
